@@ -8,11 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-        /* --- עיצוב אלגנטי (Dark Mode) --- */
         :root {
             --bg-color: #121212;
             --surface-color: #1e1e1e;
-            --primary-color: #0d6efd; /* כחול מודרני */
+            --primary-color: #0d6efd;
             --text-color: #e0e0e0;
             --text-secondary: #aaaaaa;
             --green: #198754;
@@ -33,8 +32,6 @@
             margin: auto;
             padding: 20px;
         }
-
-        /* --- לוגו וכותרת --- */
         .header {
             display: flex;
             align-items: center;
@@ -49,17 +46,13 @@
             color: var(--text-color);
             font-size: 2.5em;
             margin: 0;
-            font-weight: 300; /* פונט קל */
+            font-weight: 300;
         }
-        /* הדגשת האותיות L ו-F בשם */
         .header h1 strong {
             font-weight: 700;
             color: var(--primary-color);
         }
-
         h2, h3 { color: var(--primary-color); }
-
-        /* --- חיפוש --- */
         .search-box {
             display: flex;
             gap: 10px;
@@ -85,8 +78,6 @@
             transition: background-color 0.2s;
         }
         button:hover { background-color: #0b5ed7; }
-
-        /* --- דף הבית (Market Movers) --- */
         #homepage-view {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -97,8 +88,8 @@
             background-color: var(--surface-color);
             border-radius: 8px;
             padding: 20px;
-            max-height: 600px; /* גובה מקסימלי לרשימה */
-            overflow-y: auto; /* הוספת גלילה */
+            max-height: 600px;
+            overflow-y: auto;
         }
         .mover-card h3 { margin-top: 0; }
         .mover-list { list-style: none; padding: 0; }
@@ -114,8 +105,6 @@
         .mover-list .change-gainer { color: var(--green); }
         .mover-list .change-loser { color: var(--red); }
         .mover-list .volume { color: var(--text-secondary); font-size: 0.9em; }
-
-        /* --- תוצאות חיפוש (Stock Details) --- */
         #stock-details-view { display: none; }
         .stock-header {
             border-bottom: 2px solid var(--primary-color);
@@ -125,15 +114,11 @@
         .stock-header .sub-header { font-size: 1.2em; color: var(--text-secondary); }
         .price { font-size: 2.8em; font-weight: bold; margin: 10px 0; }
         .change { font-size: 1.5em; }
-
-        /* --- גרפים --- */
         #chart-container {
             width: 100%;
             height: 400px;
             margin: 30px 0;
         }
-
-        /* --- לשוניות (טאבים) --- */
         .tabs-nav {
             display: flex;
             border-bottom: 1px solid #444;
@@ -159,8 +144,6 @@
             border-radius: 8px;
         }
         .tab-content.active { display: block; }
-
-        /* --- תוכן הטאבים --- */
         .data-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -181,8 +164,6 @@
             font-size: 1.3em;
             font-weight: bold;
         }
-
-        /* חדשות */
         .news-list { list-style: none; padding: 0; }
         .news-item {
             margin-bottom: 15px;
@@ -196,19 +177,15 @@
         }
         .news-item a:hover { text-decoration: underline; }
         .news-item p { margin: 5px 0; color: var(--text-secondary); }
-
-        /* אנליסטים */
         #analyst-chart-container {
             max-width: 400px;
             margin: auto;
         }
-
-        /* --- לואדר (טעינה) --- */
         #loader {
             text-align: center;
             font-size: 1.5em;
             padding: 50px;
-            display: none; /* מוסתר בהתחלה */
+            display: none;
         }
     </style>
 </head>
@@ -307,7 +284,7 @@
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         // !!! שלב קריטי: החלף בכתובת שתקבל מ-Render !!!
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        const API_BASE_URL = "https://lanzafolio-server.onrender.com"; 
+        const API_BASE_URL = "https://lanzafolio-server.onrender.com"; // <-- כאן הכתובת שלך צריכה להיות
 
         let mainChart = null;
         let analystChart = null;
@@ -537,5 +514,4 @@
         }
     </script>
 </body>
-
 </html>
